@@ -1,0 +1,11 @@
+Mtest is a program that does nothing, compiled with the
+SIBO C SDK by Tore Lund. Thanks, Tore!
+
+This, and my version (../nullprog) are used for my startup code 
+investigations. 
+
+
+cstest tests a block of code (like in the 'cs' file) and calculates 
+its checksum.
+
+-- MJG

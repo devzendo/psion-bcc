@@ -1,0 +1,475 @@
+#Table to generate library stubs, from genstub.awk.
+#
+#Func-name	 		INT,SUB	ARGS		RET
+BufferCompare			A3,FF	si,di,cx,bx
+BufferCompareFolded		A4,FF	si,di,cx,bx
+BufferCopy			A1,FF	si,di,cx
+BufferJustify			AB,FF	si,cx,di,bx,dl,dh
+BufferLocate			A7,FF	ah,si,cx
+BufferLocateFolded		A8,FF	ah,si,cx
+BufferMatch			A5,FF	si,cx,di,dx
+BufferMatchFolded		A6,FF	si,cx,di,dx
+BufferSubBuffer			A9,FF	si,di,cx,bx
+BufferSubBufferFolded		AA,FF	si,di,cx,bx
+BufferSwap			A2,FF	si,di,cx
+CharIsAlphaNumeric		97,FF	al
+CharIsAlphabetic		96,FF	al
+CharIsControl			9D,FF	al
+CharIsDigit			93,FF	al
+CharIsGraphic			9C,FF	al
+CharIsHexDigit			94,FF	al
+CharIsLowerCase			99,FF	al
+CharIsPrintable			95,FF	al
+CharIsPunctuation		9B,FF	al
+CharIsSpace			9A,FF	al
+CharIsUpperCase			98,FF	al
+CharToFoldedChar		A0,FF	al,ah
+CharToLowerChar			9F,FF	al,ah
+CharToUpperChar			9E,FF	al,ah
+ConvArgumentsToBuffer		8A,04	bx,di,si
+ConvFloatToBuffer		8A,09	si,dx,di
+ConvIntToBuffer			8A,02	bx,di
+ConvLongIntToBuffer		8A,03	dx,bx,di
+ConvStringToFloat		8A,0A	si,dx,di
+ConvStringToInt			8A,07	si
+ConvStringToLongInt		8A,08	si
+ConvStringToUnsignedInt		8A,05	cx,si
+ConvStringToUnsignedLongInt	8A,06	cx,si
+ConvUnsignedIntToBuffer		8A,00	bx,cx,di
+ConvUnsignedLongIntToBuffer	8A,01	dx,bx,cx,di
+DbfAbsRead			D8,0C	bx,cx
+DbfAbsReadSense			D8,0B	bx,cx
+DbfAppend			D8,11	bx,cx
+DbfBackRead			D8,0E	bx
+DbfClose			D8,01	bx
+DbfCompress			D8,05	bx,di
+DbfCopyDown			D8,04	bx,si
+DbfCopyFile			D8,06	bx,cl,ch,dx,di,si
+DbfCount			D8,16	bx
+DbfDescRecordRead		D8,17	bx
+DbfDescRecordWrite		D8,18	bx,cx
+DbfEraseRead			D8,12	bx,di
+DbfExtHeaderRead		D8,08	al,bx,cx,si
+DbfExtHeaderWrite		D8,09	al,bx,cx,si
+DbfFileSize			D8,07	bx
+DbfFindRead			D8,14	al,bx,cx,dl,dh,di,si
+DbfFirstRead			D8,0F	bx
+DbfFlush			D8,02	bx
+DbfLastRead			D8,10	bx
+DbfNextRead			D8,0D	bx
+DbfOpen				D8,00	cl,si,di,dx,bx
+DbfSense			D8,15	bx
+DbfTrash			D8,03	bx
+DbfUpdate			D8,13	bx,cx,di
+DbfVersion			D8,0A
+DevDelete			85,08	bx,dx
+DevFind				85,0A	bx,dx,di,si
+DevGetPDDAddress		85,02	bx
+DevHold				85,04	cl
+DevInstall			85,03	bx,cx,dx
+DevLoadLDD			85,06	bx
+DevLoadPDD			85,07	bx
+DevOpenPDD			85,01	bx
+DevQueryUnits			85,09	bx
+DevRemove			85,0B	bx,dx
+DevResume			85,05
+DevVector			85,0C	cl,ch,di,bx,dx,si
+FilChangeDirectory		87,11	al,dx,bx,cx,di,si
+FilConnect			87,00	al,dx
+FilDelete			87,06	al,dx,bx
+FilExecute			87,01	al,dx,bx,cx,di
+FilLocChanged			87,14	bx
+FilMakeDirectory		87,0C	al,dx,bx
+FilOpenUnique			87,0D	al,dx,bx,cx
+FilParse			87,02	al,dx,bx,cx,di,si
+FilPathGet			87,03	al,dx,bx
+FilPathGetById			87,10	al,dx,bx,cx
+FilPathSet			87,04	al,dx,bx
+FilPathTest			87,05	al,dx,bx
+FilRename			87,07	al,dx,bx,cx
+FilSetFileDate			87,13	al,dx,bx
+FilSetInitialPath		87,12	al,dx,bx
+FilStatusDevice			87,0A	al,dx,bx,cx
+FilStatusGet			87,08	al,dx,bx,cx
+FilStatusSet			87,09	al,dx,bx,cx,di
+FilStatusSystem			87,0B	al,dx,bx,cx
+FilSystemAttach			87,0E	al,dx,bx
+FilSystemDetach			87,0F	al,dx,bx
+FloatACos			8C,04	di,si
+FloatASin			8C,03	di,si
+FloatATan			8C,05	di,si
+FloatAdd			C1,FF	di,si
+FloatCompare			C5,FF	di,si
+FloatCos			8C,01	di,si
+FloatDivide			C4,FF	di,si
+FloatExp			8C,06	di,si
+FloatInt			8C,0D	di,si
+FloatLn				8C,07	di,si
+FloatLog			8C,08	di,si
+FloatMod			8C,0C	di,si,dx
+FloatMultiply			C3,FF	di,si
+FloatNegate			C6,FF	di
+FloatPow			8C,0A	di,si,dx
+FloatRand			8C,0B	di,si
+FloatSin			8C,00	di,si
+FloatSqrt			8C,09	di,si
+FloatSubtract			C2,FF	di,si
+FloatTan			8C,02	di,si
+FloatToInt			C7,FF	si
+FloatToLong			C9,FF	si
+FloatToUnsignedInt		C8,FF	si
+FloatToUnsignedLong		CA,FF	si
+GenAlarmHook			8B,2B	bx
+GenAlarmId			8B,2D
+GenAlarmUnHook			8B,2C
+GenCrc				8B,29	cx,dx,si
+GenDataSegment			8F,FF
+GenDeferredMode			8B,08	al
+GenEnvBufferDelete		8B,23	di,dl
+GenEnvBufferFind		8B,24	bx,di,dl,si
+GenEnvBufferGet			8B,21	di,dl,si
+GenEnvBufferSet			8B,22	di,dl,si,cl
+GenEnvStringDelete		8B,27	di
+GenEnvStringFind		8B,28	bx,di,si,cx
+GenEnvStringGet			8B,25	di,si
+GenEnvStringSet			8B,26	di,si
+GenGetAmPmText			8B,1D	bx
+GenGetAutoSwitchOffValue	8B,17	ax
+GenGetBatteryType		8B,1F
+GenGetCommandLine		8B,0E			ax
+GenGetCountryData		8B,05	bx
+GenGetErrorText			8B,06	al,bx
+GenGetLanguageCode		8B,1B
+GenGetNotifyState		8B,15
+GenGetOsData			8B,07	di,si,cx
+GenGetRamSizeInParas		8B,0D
+GenGetSoundFlags		8B,0F
+GenGetSuffixes			8B,1C	al,bx
+GenGetText			8B,14	al,bx
+GenIntByNumber			D5,FF	al,si,di
+GenLcdType			8B,01
+GenMarkActive			8B,12
+GenMarkNonActive		8B,13
+GenMaskDecrypt			8B,36
+GenMaskEncrypt			8B,35
+GenMaskInit			8B,34
+GenNotify			8B,09	bx,cx,dx,di,si
+GenNotifyError			8B,0A	al,bx,dx,di,si
+GenNotifyHook			8B,0B	bx
+GenNotifyUnHook			8B,0C
+GenParse			8B,03	bx
+GenPasswordControl		8B,30
+GenPasswordQuery		8B,31
+GenPasswordSet			8B,2E
+GenPasswordTest			8B,2F
+GenResetRevector		8B,1A	al
+GenRomVersion			8B,2A
+GenSetAutoSwitchOffValue	8B,18
+GenSetBatteryType		8B,20	al
+GenSetConfig			8B,33
+GenSetCountryData		8B,1E	bx
+GenSetNotifyState		8B,16	al
+GenSetOnEvents			8B,37	al
+GenSetRevector			8B,19	al,cx,bx
+GenSetSoundFlags		8B,10	ax
+GenSound			8B,11	bx,cx
+GenStartReason			8B,02
+GenTickle			8B,32
+GenVersion			8B,00
+HeapAdjustCellSize		81,02	bx,cx,dx
+HeapAllocateCell		81,00	cx
+HeapCellSize			81,04	bx
+HeapFreeCell			81,03	bx
+HeapFreeMemory			81,06
+HeapReAllocateCell		81,01	bx,cx
+HeapSetGranularity		81,05	bx
+HwBackLight			8E,20	al
+HwClearA2Control1Bits		8E,05	al
+HwClearA2Control2Bits		8E,09	al
+HwClearA2Control3Bits		8E,0D	al
+HwComboOff			8E,01
+HwComboOn			8E,00
+HwExit				8E,16
+HwForceSupplyReading		8E,1D
+HwFreeChannel			8E,1A	al
+HwFreeCombo			8E,18
+HwGetBackLight			8E,1E
+HwGetChannel			8E,19	al
+HwGetCombo			8E,17
+HwGetPsuType			8E,1B
+HwGetSupplyStatus		8E,11	bx
+HwLcdContrastDelta		8E,12	al
+HwNullFrame			8E,15
+HwPacksOff			8E,03
+HwPacksOn			8E,02
+HwReadA2Control1		8E,06
+HwReadA2Control2		8E,0A
+HwReadA2Control3		8E,0E
+HwReadLcdContrast		8E,13
+HwSelectChannel			8E,10	al
+HwSetA2Control1Bits		8E,04	al
+HwSetA2Control2Bits		8E,08	al
+HwSetA2Control3Bits		8E,0C	al
+HwSetBackLight			8E,1F	bx
+HwSupplyWarnings		8E,1C
+HwSwitchOff			8E,14	cx
+HwWriteA2Control1		8E,07	al
+HwWriteA2Control2		8E,0B	al
+HwWriteA2Control3		8E,0F	al
+IntToFloat			CB,FF	ax,di
+IoAddApplicationHandler		86,15	bx,cx,dx
+IoAddHandler			86,0B	al,bx,es
+IoAsynchronous			86,00	al,bx,cx,dx,di
+IoAsynchronousNoError		86,01	al,bx,cx,dx,di
+IoClose				86,10	bx		ax
+IoEnableApplicationHandler	86,17	bx,cl
+IoEnableHandler			86,0D	bx,cl
+IoKeyAndMouseAsynchronous	86,1C	bx
+IoKeyAndMouseStatus		DA,FF
+IoKeyAndMouseWithWait		86,14	bx
+IoNextHalfSecond		86,1D
+IoNextHalfSecondStatus		DD,FF
+IoOpen				85,00	bx,cx,dx	ax
+IoRead				86,11	bx,cx,dx	ax
+IoRemoveApplicationHandler	86,16	bx
+IoRemoveHandler			86,0C	bx
+IoRequestReset			86,0E	bx
+IoRequestResetCancel		86,0F	bx,cx
+IoRoot				86,03	bx,si
+IoSeek				86,13	bx,cx,dx	ax
+IoShiftStates			86,18
+IoSignal			86,08
+IoSignalByPid			86,09	bx
+IoSignalByPidNoReSched		86,0A	bx
+IoSignalKillAsynchronous	86,1A	bx,di
+IoSignalKillCancel		86,1B	bx
+IoSuper				86,04	bx,si
+IoWaitForSignal			86,05
+IoWaitForSignalNoHandler	86,19
+IoWaitForStatus			86,06	di
+IoWithWait			86,02	bx,al,cx,dx	ax
+IoWrite				86,12	bx,cx,dx	ax
+IoYield				86,07
+LibCopy				84,08	bx,cx,di,si
+LibCreate			84,05	bx,cx
+LibCreateByHandle		84,06	bx,cx
+LibDestroy			84,07	bx
+LibEnter			D2,FF	ax,bx,cx,dx,si,di
+LibFind				84,03	bx
+LibHandle			84,04	bx
+LibLeave			D3,FF	ax
+LibLink				84,02	bx
+LibLoad				84,00	bx,cl
+LibLoadFile			84,0A	bx,ch,cl
+LibOpen				84,09	bx
+LibReClass			84,0B	bx,cx,di
+LibReClassByHandle		84,0C	bx,cx,di
+LibSend				CF,FF	bx,cl,dx,si,di
+LibSendExit			D7,FF	ax
+LibSendSuper			D0,FF	bx,cl,dx,si,di
+LibUnLoad			84,01	bx
+LongIntCompare			BB,FF	ax,bx,cx,dx
+LongIntDivide			BD,FF	ax,bx,cx,dx
+LongIntMultiply			BC,FF	ax,bx,cx,dx
+LongToFloat			CD,FF	ax,bx,di
+LongUnsignedIntCompare		BE,FF	ax,bx,cx,dx
+LongUnsignedIntDivide		C0,FF	ax,bx,cx,dx
+LongUnsignedIntMultiply		BF,FF	ax,bx,cx,dx
+LongUnsignedIntRandom		8B,04	bx
+MessFree			83,07	bx,cx
+MessInit			83,00	bl,bh
+MessReceiveAsynchronous		83,01	bx,di
+MessReceiveCancel		83,03
+MessReceiveWithWait		83,02	bx
+MessSend			83,04	bx,cx,si
+MessSendReceiveAsynchronous	83,05	bx,cx,di
+MessSendReceiveWithWait		83,06	bx,cx,si
+MessSignal			83,08	bx,cx
+MessSignalCancel		83,09	bx,cx
+ProcCopyFromById		91,FF	bx,cx,di
+ProcCopyToById			92,FF	bx,cx,di
+ProcCreate			88,04	bx
+ProcCreateTask			88,05	bx,cl,di,si
+ProcFind			88,0B	bx,di,si
+ProcGetOwner			88,10	bx
+ProcGetPriority			88,02	bx
+ProcId				88,00
+ProcIdByName			88,01	bx
+ProcIndStringCopyFromById	DC,FF	bx,cx,di,si
+ProcKill			88,08	al,bx
+ProcNameById			88,0A	bx,di
+ProcOnTerminate			88,0E	bx
+ProcPanic			90,FF	al
+ProcPanicById			88,09	al,bx
+ProcRename			88,0C	bx,di
+ProcResume			88,06	bx
+ProcSetPriority			88,03	bx,al
+ProcSuspend			88,07	bx
+ProcTerminate			88,0D	al,bx
+ProcWatchAllExits		88,0F	bx
+SegAdjustSize			80,06	bx,cx
+SegClose			80,04	bx
+SegCloseLockedOrDevice		80,0D	bx
+SegCopyFrom			80,09	bx,cx,si,dx,di
+SegCopyTo			80,08	bx,cx,si,dx,di
+SegCreate			80,01	al,bx,cx
+SegDelete			80,02	bx
+SegFind				80,07	bx,di,si
+SegFreeMemory			80,00
+SegLock				80,0A	bx
+SegOpen				80,03	bx
+SegRamDiskUsed			80,0C
+SegSize				80,05	bx
+SegUnLock			80,0B	bx
+SemCreate			82,00	bx
+SemDelete			82,01	bx
+SemSignalMany			82,04	bx,cx
+SemSignalOnce			82,03	bx
+SemSignalOnceNoReSched		82,05	bx
+SemWait				82,02	bx
+StringCapitalise		DB,FF	si
+StringCompare			AF,FF	si,di
+StringCompareFolded		B0,FF	si,di
+StringConvertToFolded		AE,FF	si
+StringCopy			AC,FF	si,di
+StringCopyFolded		AD,FF	si,di
+StringLength			B9,FF	di
+StringLocate			B3,FF	ah,si
+StringLocateFolded		B4,FF	ah,si
+StringLocateInReverse		B5,FF	ah,si
+StringLocateInReverseFolded	B6,FF	ah,si
+StringMatch			B1,FF	si,di
+StringMatchFolded		B2,FF	si,di
+StringSubString			B7,FF	si,di
+StringSubStringFolded		B8,FF	si,di
+StringValidateName		BA,FF	al,ah
+TimDateToDaySeconds		89,07	si,di
+TimDayOfWeek			89,09	cx,dx
+TimDaySecondsToDate		89,06	si,di
+TimDaySecondsToSystemTime	89,05	si
+TimDaysInMonth			89,08	ch,cl
+TimGetSystemTime		89,02
+TimNameOfDay			89,0A	al,bx
+TimNameOfMonth			89,0B	al,bx
+TimSetSystemTime		89,03	cx,dx
+TimSleepForTenths		89,00	cx,dx
+TimSleepForTicks		89,01	cx,dx
+TimSystemTimeToDaySeconds	89,04	cx,dx,si
+TimWaitAbsolute			89,0C	cx,dx
+TimWeekNumber			89,0D	cx,dx
+UnsignedIntToFloat		CC,FF	ax,di
+UnsignedLongToFloat		CE,FF	di,ax,bx
+gBorder				8D,49	bx
+gBorderRect			8D,4A	bx,cx
+gCheckBitmapID			D6,0E	dx
+gCloseMetafile			D6,02	bx
+gClrRect			8D,3A	bx,cx
+gCopyRect			8D,1E	bx,cx,dx
+gCopybit			8D,29	bx,cx,dx,di
+gCreateBit			8D,B3	bx,cx,si
+gCreateGC			8D,A3	bx,cx,dx
+gCreateTempGC			8D,22	bx,cx,dx
+gDrawLine			8D,27	bx,cx,dx,di
+gDrawbox			8D,31	bx
+gFillpattern			8D,21	bx,cx,dx
+gFontInfo			D6,0C	dx,cx,di
+gFreeTempGC			8D,03
+gGetWidthTable			D6,12	dx,si,di
+gInvObloid			8D,4C	bx
+gOpenBit			8D,AE	bx,cx,dx,si
+gOpenFont			8D,B0	bx
+gPeekBit			8D,9F	bx,cx,dx,si
+gPlayback			D6,01	dx
+gPrintBoxText			8D,2D	bx,si,ax,cx,dx,di
+gPrintClipText			8D,2C	bx,cx,dx,di,si
+gPrintText			8D,28	bx,cx,dx,di
+gRecordToMetafile		D6,03	di,cx,dx
+gSaveBit			8D,B9	bx,cx
+gSetGC				8D,24	bx,cx,dx
+gSetOpenAddress			8D,5F	bx,cx
+gTextCount			D6,11	dx,si,di,cx,ax
+gTextWidth			D6,0B	dx,si,di,cx
+gXprintText			8D,4B	bx,cx,dx,di,si
+wAppKeyHandler			8D,DD
+wAttachToForegroundClient	8D,08
+wAttachtoClient			8D,93	bx
+wBeginRedraw			8D,37	bx,cx
+wBeginRedrawGC			8D,2B	bx,cx,dx,di
+wBeginRedrawWin			8D,10	bx,cx
+wBeginRedrawWinGC		8D,26	bx,cx,dx
+wCallDYL			8D,3B	bx,cx,dx,di
+wCallDYLreply			8D,BC	bx,cx,dx,di,si
+wCancel				8D,04
+wCancelBackTaskKey		8D,E4	bx,cx,dx
+wCancelCaptureKey		8D,C6	bx,cx,dx
+wCancelSystemModal		8D,48	bx
+wCancelTaskKey			8D,E3	bx,cx,dx
+wCaptureKey			8D,C5	bx,cx,dx
+wCaptureMouse			8D,0F	bx
+wChangeWinBitmap		8D,3E	bx,cx,dx
+wCheckPoint			D6,0A
+wCleanup			8D,07
+wClientIconised			8D,18	bx
+wClientInfo			8D,0C	bx
+wClientPosition			8D,19	bx,cx
+wCloseDown			D6,05
+wCloseWindowTree		8D,0D	bx
+wConnect			D6,00	si,di,cx
+wCreateWindow			8D,AA	bx,cx,dx,di
+wDetachClient			8D,06
+wDisablePauseKey		8D,CE
+wDisconnect			8D,85
+wDrawPolyLine			8D,20	bx,cx,dx
+wDrawTextcursor			8D,35	bx,cx
+wDrawbutton			8D,60	bx,cx,dx
+wEnablePauseKey			8D,4D
+wEndCompute			8D,8B
+wEndRedraw			8D,00
+wEraseTextCursor		8D,01
+wEscapeoff			8D,C1
+wEscapeon			8D,BF
+wFlush				D6,04
+wFree				8D,11	bx
+wGetCommand			8D,DB	si
+wGetEvent			D6,08	dx
+wGetProcessList			8D,D9	si
+wInfoMsg			8D,DE	bx
+wInformOn			8D,51
+wInitialiseWindowTree		8D,14	bx
+wInquireWindow			8D,8E	bx,si
+wInquireWindowOffset		8D,9A	bx,cx,si
+wInvalidateRect			8D,36	bx,cx
+wInvalidateWin			8D,15	bx
+wLoadDYL			8D,B2	bx
+wMakeInvisible			8D,12	bx
+wMakeVisible			8D,17	bx
+wOpenMouseIcon			8D,AF	bx,cx
+wPanic				D6,07	dx
+wReAssignRootWindow		8D,44	bx
+wReleaseMouse			8D,02
+wRubberBand			8D,1D	bx,cx,dx
+wSaverect			8D,C3	bx,cx,dx
+wScrollRect			8D,1C	bx,cx,dx
+wScrollWin			8D,34	bx,cx
+wSelect				D6,06	dx
+wSendCommand			8D,DA	bx,cx,dx
+wSetBackTaskKey			8D,E2	bx,cx,dx
+wSetBusyMsg			8D,D5	bx,cx
+wSetTaskKey			8D,E1	bx,cx,dx
+wSetWinBitmap			8D,BD	bx,cx,dx
+wSetWindow			8D,25	bx,cx,dx
+wStartCompute			8D,8A
+wSystem				8D,D8	bx,cx
+wSystemModal			8D,47	bx
+wTextCursor			8D,5C	bx,cx
+wUsermsg			8D,09
+wValidateRect			8D,38	bx,cx
+wValidateWin			8D,16	bx
+wWindowposition			8D,1B	bx,cx
+wsCreateClock			8D,D3	bx,cx,dx,di,si
+wsDisable			8D,50
+wsDisableTemp			8D,56
+wsEnable			8D,4F
+wsEnableTemp			8D,57
+wsSetClock			8D,54	bx,cx
+wsUpdate			8D,52	bx

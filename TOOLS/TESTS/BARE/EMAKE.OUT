@@ -1,0 +1,18 @@
+EMake V4.30F (09/11/93) Copyright (C) Psion PLC 1991-92
+Converting LOC::C:\SIBOSDK\DEMO\W_HELLO.EXE to LOC::C:\SIBOSDK\DEMO\W_HELLO.IMG
+IMAGE file data
+Code Segment       = 0180 (bytes)
+Initial IP         = 0000
+Stack              = 1000 (bytes)
+Data               = 0060 (bytes)
+Heap               = 0800 (bytes)
+Data Segment       = 1860 (bytes)
+Initialized data   = 0020 (bytes)
+Code checksum      = 9BC2
+Data checksum      = 046E
+Code Version       = 100F
+Priority           = 0080
+Header size        = 0040 (bytes)
+Dyl count          = 0000
+Dyl table offset   = 00000000
+Image file size    = 000001E0 (bytes)

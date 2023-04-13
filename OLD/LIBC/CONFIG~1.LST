@@ -1,0 +1,26 @@
+bcc:+:
+bcc:Config:bcclib:Library of bcc helper functions
+bios:Config:bios:Minimal syscalls for BIOS level
+error:+:
+error:Config:error:Unix error functions
+grp:Config:grp:/etc/group managment
+gtermcap:+:+
+i386fp:Config:386fp:Bcc 386 floating point
+kinclude:Config:kinc:The kernel include files
+malloc1:+:
+malloc1:Config:malloc:Robert's malloc routines
+malloc2:Config:malloc:Joel's malloc functions
+misc:+:
+misc:Config:misc:Various unix lib functions
+msdos:Config:msdos:Msdos system calls
+pwd:Config:pwd:/etc/passwd managment
+regexp:Config:regexp:Regular expression lib
+stdio2:+:
+stdio2:Config:stdio:Robert's stdio package
+string:+:
+string:Config:string:String and memory manipulation
+syscall:Config:syscall:Linux-8086 system call routines
+termios:Config:termios:Termios functions 
+tests:Config:tools:These are tools to test libc - make directly
+time:Config:time:Unix time manipulation functions.
+utmp:+:+

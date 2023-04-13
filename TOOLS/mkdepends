@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Script to build a dependencies list for all the C 
+# files in the current directory
+#
+> depends
+for i in `find . -name "*.c" -printf "%f\n"`
+do
+	makelist -r $i >> depends
+done

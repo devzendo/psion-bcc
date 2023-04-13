@@ -1,0 +1,271 @@
+ASSERT.H:                          #p, __FILE__, __LINE__)), (abort())))
+CLIB.H:#pragma warn(wall => on)           /* enable all warnings */
+CLIB.H:#pragma save
+CLIB.H:#pragma call(reg_saved=>(ds, di, si,st1,st2), reg_param=>(ax,bx,cx,dx))
+CLIB.H:#pragma restore
+CLIB.H:#pragma save,check(index=>off)
+CLIB.H:#pragma restore
+CLIB.H:#pragma save, call(reg_param=>(), reg_saved=>(ds,si,di,st1,st2), near_call=>on, c_conv=>on)
+CLIB.H:#pragma restore
+CONIO.H:#pragma save,call(reg_param=>(dx,ax),reg_saved=>(bx,cx,si,di,es,ds,st1,st2), inline=>on)
+CONIO.H:#pragma restore
+DOS.H:#pragma save,call(reg_param=>(dx,ax),reg_saved=>(bx,cx,si,di,es,ds,st1,st2), inline=>on)
+DOS.H:#pragma restore
+EPOC.H:#pragma save,call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(cx,ax),reg_saved =>(bx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,dx),reg_saved =>(bx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,di,dx,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma restore
+EPOC.H:#pragma save,call(reg_param =>(),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(di,si,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx,di,si,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(ax,bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,ax),reg_saved =>(cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(di,bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx,si,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx,dx,di,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(ax,bx,dx,di,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,di,si,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,si,di,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,di,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx,si,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(dx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(dx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(si,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(si,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE),inline =>on)
+EPOC.H:#pragma call(reg_param =>(ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE),inline =>on)
+EPOC.H:#pragma restore
+EPOC.H:#pragma save,call(reg_param =>(bx,cx,dx,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx,dx,di,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,cx,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma call(reg_param =>(bx,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+EPOC.H:#pragma restore
+EPOCDEFS.H:#pragma save,call(inline=>on)
+EPOCDEFS.H:#pragma restore
+HWIF.H:#  ifndef P_CONS_H
+HWIF.H:#  include <p_cons.h>
+HWIF.H:#  endif
+HWIF.H:#  ifndef EPOCCONS_H
+HWIF.H:#  include <epoccons.h>
+HWIF.H:#  endif
+HWIM.H:#pragma save,call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(bx,ax,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(dx,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(cx,dx,bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(bx,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(ax),reg_saved =>(bx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(dx,si,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(cx,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(bx,ax),reg_saved =>(cx,dx,si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(dx,ax),reg_saved =>(si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(dx,ax),reg_saved =>(si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(dx,ax,bx),reg_saved =>(si,di,EPOC_SAVE))
+HWIM.H:#pragma call(reg_param =>(dx),reg_saved =>(si,di,EPOC_SAVE))
+HWIM.H:#pragma METHOD_CALL
+HWIM.H:#pragma restore
+IOMANIP.HPP:#pragma save,warn(wpnu=>off)
+IOMANIP.HPP:#pragma restore
+P_CONFIG.H:#pragma save,call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_CONFIG.H:#pragma restore
+P_CRC.H:#pragma save,call(reg_param =>(di,si,cx),reg_saved =>(bx,cx,si,di,EPOC_SAVE))
+P_CRC.H:#pragma restore
+P_DATE.H:#pragma save,call(reg_param =>(si,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_DATE.H:#pragma call(reg_param =>(si,di),reg_saved =>(cx,dx,si,di,EPOC_SAVE))
+P_DATE.H:#pragma call(reg_param =>(bx,di),reg_saved =>(bx,si,di,EPOC_SAVE))
+P_DATE.H:#pragma call(reg_param =>(di,si,bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_DATE.H:#pragma restore
+P_DBF.H:#pragma	save, call(reg_param=>(bx,dx),reg_saved=>(cx,si,di,EPOC_SAVE))
+P_DBF.H:#pragma	call(reg_param=>(di,bx,si,dx,cx,ax),reg_saved=>(bx,cx,dx,si,di,EPOC_SAVE))
+P_DBF.H:#pragma	call(reg_param=>(di,bx,si,cx,dx,ax),reg_saved=>(bx,cx,dx,si,di,EPOC_SAVE))
+P_DBF.H:#pragma call(reg_param=>(di,bx,cx),reg_saved=>(bx,cx,dx,si,di,EPOC_SAVE))
+P_DBF.H:#pragma call(reg_param=>(bx,cx,si),reg_saved=>(bx,cx,dx,si,di,EPOC_SAVE))
+P_DBF.H:#pragma call(reg_param=>(bx,cx,si,di),reg_saved=>(bx,cx,si,di,EPOC_SAVE))
+P_DBF.H:#pragma call(reg_param=>(bx,si),reg_saved=>(cx,dx,di,EPOC_SAVE))
+P_DBF.H:#pragma call(reg_param=>(ax,bx,si,cx),reg_saved=>(bx,cx,dx,si,di,EPOC_SAVE))
+P_DBF.H:#pragma call(reg_param=>(bx,si),reg_saved=>(bx,cx,dx,si,di,EPOC_SAVE),inline=>on)
+P_DBF.H:#pragma restore
+P_FILE.H:#pragma save,call(reg_param =>(bx,cx,di,si,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_FILE.H:#pragma restore
+P_GRAF.H:#pragma save,call(reg_param =>(si,di),reg_saved =>(bx,cx,si,di,EPOC_SAVE))
+P_GRAF.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_GRAF.H:#pragma call(reg_param =>(bx,ax,di),reg_saved =>(ax,bx,cx,dx,si,di,EPOC_SAVE))
+P_GRAF.H:#pragma call(reg_param =>(si,bx,di),reg_saved =>(EPOC_SAVE))
+P_GRAF.H:#pragma call(reg_param =>(bx,ax,dx),reg_saved =>(ax,bx,cx,dx,si,di,EPOC_SAVE))
+P_GRAF.H:#pragma call(reg_param =>(di,bx),reg_saved =>(bx,cx,si,di,EPOC_SAVE))
+P_GRAF.H:#pragma call(reg_param =>(si,bx,di),reg_saved =>(bx,EPOC_SAVE))
+P_GRAF.H:#pragma restore
+P_MATH.H:#pragma save,call(reg_param =>(si,di,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_MATH.H:#pragma call(reg_param =>(di,si,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_MATH.H:#pragma call(reg_param =>(di,si,dx),reg_saved =>(cx,dx,si,di,EPOC_SAVE))
+P_MATH.H:#pragma call(reg_param =>(di,si,dx),reg_saved =>(si,EPOC_SAVE))
+P_MATH.H:#pragma restore
+P_OBJECT.H:#pragma save,call(reg_param =>(bx,cx,dx,si,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_OBJECT.H:#pragma call(reg_param =>(bx,cx,dx,si,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE),inline =>on)
+P_OBJECT.H:#pragma restore
+P_OBJECT.H:#pragma save,call(reg_param =>(bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_OBJECT.H:#pragma call(reg_param =>(bx,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_OBJECT.H:#pragma call(reg_param =>(bx,si,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_OBJECT.H:#pragma call(reg_param =>(bx,ax,si,cx),reg_saved =>(bx,dx,si,di,EPOC_SAVE))
+P_OBJECT.H:#pragma call(reg_param =>(si,bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_OBJECT.H:#pragma call(reg_param =>(bx,cx,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_OBJECT.H:#pragma call(reg_param =>(bx,di,si,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_OBJECT.H:#pragma restore
+P_QUE.H:#pragma save,call(reg_param =>(si,di),reg_saved =>(ax,cx,dx,si,di,EPOC_SAVE))
+P_QUE.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(ax,bx,cx,dx,si,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE),inline =>on)
+P_STD.H:#pragma call(reg_param =>(bx,ax,di,cx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE),inline=>off)
+P_STD.H:#pragma call(reg_param =>(bx,ax,cx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,dx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di),reg_saved =>(cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(di,si,bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(si,cx,di,bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,si,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,cx,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(si,cx,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(si,cx,di,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(si,cx,di,bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,si,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,si,cx),reg_saved =>(bx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,cx,di,si,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE),reg_return =>(ax,bx))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(di,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(bx,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,cx,di,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,dx,si,cx),reg_saved =>(cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,si,cx,dx),reg_saved =>(cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(di,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,dx,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,bx,dx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,bx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,bx,si,cx,dx,ax),reg_saved =>(bx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,bx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,bx,cx),reg_saved =>(bx,cx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(bx),reg_saved =>(cx,dx,si,di,EPOC_SAVE),reg_return =>(ax,bx))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(bx,cx,dx),reg_saved =>(bx,cx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,cx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(si,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,cx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di,dx,si,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(bx,di,cx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(dx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(si,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(si,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(si,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,di,cx),reg_saved =>(bx,cx,dx,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(dx,di,cx),reg_saved =>(cx,dx,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,di),reg_saved =>(bx,cx,dx,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(dx,di),reg_saved =>(cx,dx,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(cx,bx),reg_saved =>(bx,cx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+P_STD.H:#pragma save,call(reg_param =>(di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(dx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,cx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,di,dx,si,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,cx,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma call(reg_param =>(bx,di,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+P_STD.H:#pragma restore
+RTCHECK.H:#pragma save,call(reg_param=>(), reg_saved=>(ax,bx,cx,dx,ds,si,di,st1,st2))
+RTCHECK.H:#pragma name(prefix=>"CoreSig@")
+RTCHECK.H:#pragma restore
+SETJMP.H:#pragma save,call(reg_saved=>(ax,bx,cx,dx,ds,es,si,di,st0,st1,st2,st3,st4,st5,st6))
+SETJMP.H:#pragma restore
+STDEPOC.H:#pragma call(reg_saved=>(ax,bx,cx,dx,di,si,ds,st1,st2),\
+STDEPOC.H:#pragma call(seg_name =>null)
+STDEPOC.H:#pragma data(ss_in_dgroup =>on,seg_name =>null)
+STDEPOC.H:#pragma warn(wall=>on,wpnu=>off,wovr=>off)
+STREAM.HPP:#pragma save
+STREAM.HPP:#pragma name(prefix=>"__o__")
+STREAM.HPP:#pragma restore
+WLIB.H:#pragma save
+WLIB.H:#pragma call(reg_param =>(bx,cx,dx,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(bx,cx,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(bx,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(bx,si,ax,cx,dx,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(dx,cx,di),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(dx,si,di,cx,ax),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(di,cx,dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(bx,cx,dx,di,si),reg_saved =>(bx,cx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(bx,cx,dx,di,si),reg_saved =>(bx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(bx,cx,dx,di,si),reg_saved =>(cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(bx,cx,dx,di,si),reg_saved =>(si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(bx,cx,dx,di,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(si,di,cx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(dx),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma call(reg_param =>(bx,cx,dx,di,si),reg_saved =>(bx,cx,dx,si,di,EPOC_SAVE))
+WLIB.H:#pragma restore

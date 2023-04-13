@@ -1,0 +1,6 @@
+samsara:07:02:11:~/psionports/psion-c/psion-bcc/tools $ bcc nicprog.c -o nicprog.img -v -Y-p50
+nicprog.c:
+/usr/bcc/lib/bcc/bcc-cc1 nicprog.c -o /tmp/bcc000003E3 -I/usr/bcc/include -0 
+/usr/bcc/lib/bcc/as86 /tmp/bcc000003E3 -o /tmp/bcc000103E3 -u -w -0 -n nicprog.s 
+/usr/bcc/lib/bcc/ld86 -o /tmp/bcc000203E3 -i -L/usr/bcc/lib/bcc/i86/ -0 -C0 /tmp/bcc000103E3 -lc 
+/usr/bcc/lib/bcc/imgconv /tmp/bcc000203E3 nicprog.img -p50 

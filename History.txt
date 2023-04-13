@@ -1,0 +1,28 @@
+Took from the Linux-8086 project - the archives I used are
+available as a separate package from me.
+Did some bug fixes and enhancements, added .img converter, etc.
+
+20/01/97 Version 0.00 released. Pre-alpha development snapshot.
+27/01/97 Version 0.01 released. Ditto.
+03/02/97 Version 0.02 released. Ditto. .img converter and tools..
+10/03/97 Version 0.03 released. Lots of little changes:
+         * manual pages updated, 
+         * -p paragraph alignment options for linker,
+         * -s stack size option for front end; now we can generate the
+           correct stack size and data base address,
+         * .img file structure correct (?) and can contain embedded files,
+         * disimg developed from dis88: disassembles .img files,
+         * CPOC's startup code and includes provided, 
+         * as86 now generates 16-bit (8086) code by default.
+21/03/97 Version 0.04 released. 
+         * MS-DOS port and stub library generation, thanks to Stephen Henson.
+         * Larger stub library by MJG.
+05/09/97 Version 0.05 not yet released
+         * Psion's SIBO C SDK headers are now in the include directory.
+         * Moved old include files, libbsd and libc library to the 'old' 
+           directory.
+         * Changed filenames to be 8.3 friendly.
+         * Added more stuff for MS-DOS port. Added stuff for EPOC port.
+
+
+

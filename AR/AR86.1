@@ -1,0 +1,56 @@
+.TH ar86 1 "Jan, 1997"
+.BY Matt Gumbley
+.nh
+.SH NAME
+ar86 \- Archive manager for ld86(1)
+.SH SYNOPSIS
+.BR ar86
+.RB c | d | r | t | x \  [ v ]
+.B library file...
+
+.SH DESCRIPTION
+This archiver allows files (usually object files) to be placed in an archive
+file. 
+
+This archive is usually used to group related object files together
+to form a library. 
+
+Libraries thus produced may be linked with other object files to create 
+executable programs, by using the 
+.B -l
+option of the 
+.BR ld86
+linker.
+
+.SH OPTIONS
+.TP
+.B c
+create - add a new file to the archive
+.TP
+.B d
+delete - delete a file from the archive
+.TP
+.B r
+replace - replace an existing file in the archive, creating the 
+archive if it does not already exist
+.TP
+.B t
+table - print a list of files in the archive
+.TP
+.B v
+verbose - print additional information
+.TP
+.B x
+extract - extract a file from the archive
+
+
+.SH HISTORY
+
+This package was developed as part of CPOC, the Psion C system, by Dave and Keith Walker.
+
+It was added to the Psion-bcc Software Development Kit by Matt Gumbley, 
+who produced this manual page from comments in the source.
+
+.SH BUGS
+
+Huh?

@@ -1,0 +1,4 @@
+1) disimg interprets retf instructions as reti
+2) libc code doesn't look right. Build examples/nullprog/nullprog.c
+   and disassemble it using disimg. Calls to strcpy look ok, but the strcpy
+   routine itself doesn't look right. Is this disimg? Is this as86? Who shot JR?

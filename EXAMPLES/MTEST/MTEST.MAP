@@ -1,0 +1,87 @@
+
+ Start  Stop   Length Name               Class              Group
+
+ 00000H 000E5H 000E5H _TEXT              CODE               (none)
+ 000F0H 010F0H 01000H STACK              STACK              (none)
+ 010F0H 020F0H 01000H _MAGIC             MAGIC              DGROUP 
+ 020F0H 020F2H 00002H _INIT              DATA               DGROUP 
+ 020F2H 020F4H 00002H _CONST             DATA               DGROUP 
+ 02100H 02111H 00011H _DATA              DATA               DGROUP 
+ 02110H 02129H 00019H _BSS               BSS                DGROUP 
+ 02120H 02122H 00002H BSS_END            BSS                DGROUP 
+
+  Address         Publics by Value
+
+ 0000:0000       __init0
+ 0000:000E       _p_leave
+ 0000:0016       __begin
+ 0000:0037       _p_abort
+ 0000:003E       __fp_0
+ 0000:003F       __fp_1
+ 0000:0040       __sigFp
+ 0000:0043       __math_excep
+ 0000:004C       __InitSetup
+ 0000:0069       __InitLoop
+ 0000:00C3       _p_exit
+ 0000:00D1       _main
+ 0000:00D2       __FatalErrorPos
+ 0000:00DB       __FatalError
+ 0000:00DF       _ExtCatTable
+ 0000:00DF       _ClassTable
+ 0000:00E1       __FloatInit
+ 0000:00E4       __FloatJmpRestore
+ 0000:00E4       __FloatFinish
+ 0000:00E4       __FloatJmpSave
+ 0000:00E4       __FloatMathExcepDos
+ 0000:00E4       __FloatInitInstance
+ 010F:0000       _DatWordDead
+ 010F:0002       _DatHandNext
+ 010F:0004       _DatHandPrev
+ 010F:0006       _DatCountrySeg
+ 010F:0008       _DatClassHandle
+ 010F:000A       _DatClassPtr
+ 010F:000C       _DatEClassHandle
+ 010F:000E       _DatEClassPtr
+ 010F:0010       _DatEnterFramePtr
+ 010F:0012       _w_ws
+ 010F:0014       _w_am
+ 010F:0016       _wClientData
+ 010F:0018       _wserv_channel
+ 010F:001A       _T
+ 010F:001C       _r
+ 010F:001E       _DatOsFramePtr
+ 010F:0020       _DatATFlag
+ 010F:0021       _DatHeapLocked
+ 010F:0022       _DatProcessNamePtr
+ 010F:0024       _DatCommandPtr
+ 010F:0026       _DatTest
+ 010F:0028       _DatApp1
+ 010F:002A       _DatApp2
+ 010F:002C       _DatApp3
+ 010F:002E       _DatApp4
+ 010F:0030       _DatApp5
+ 010F:0032       _DatApp6
+ 010F:0034       _DatApp7
+ 010F:0036       _DatDialogPtr
+ 010F:0038       _DatGate
+ 010F:003A       _DatLocked
+ 010F:003C       _DatStatusNamePtr
+ 010F:003E       _DatUsedPathNamePtr
+ 010F:1000       __init_begin
+ 010F:1002       __const_start
+ 010F:1002       __init_start
+ 010F:1010       CoreSig@CnsHandler
+ 010F:1010       __data_start
+ 010F:1012       @InitPointer
+ 010F:1014       @InitPriority
+ 010F:1020       __bss_start
+ 010F:1020       __SH_sword
+ 010F:1022       @InitCount
+ 010F:1024       @InitEnd
+ 010F:1026       @InitDone
+ 010F:1028       @ExitCode
+ 010F:102A       @StackContextSP
+ 010F:102C       @StackContextBP
+ 010F:1030       __bss_end
+
+Program entry point at 0000:0000

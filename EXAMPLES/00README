@@ -1,0 +1,12 @@
+nullprog is the null program. Used to test that things
+work as they should.
+
+mtest is the null program built by Tore Lund using the
+SIBO C SDK. Thanks, Tore!
+
+Look at the testcompiler script to see how I built the
+test program nicprog.c
+
+hello.img is a "Hello World!" program built with SmallC
+on the Psion.
+

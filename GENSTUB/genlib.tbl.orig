@@ -1,0 +1,20 @@
+#Table to generate library stubs, from genstub.awk.
+#Very incomplete at present ...
+#
+#Func-name 		INT,SUB		ARGS		RET
+
+#DevManager
+IoOpen			85,00		bx,cx,dx	ax
+
+#IoManager
+IoWithWait		86,02		bx,al,cx,dx	ax
+IoClose			86,10		bx		ax
+IoRead			86,11		bx,cx,dx	ax
+IoWrite			86,12		bx,cx,dx	ax
+IoSeek			86,13		bx,cx,dx	ax
+
+#FileManager
+FilConnect		87,00		al,dx
+#GenManager
+GenNotify		8B,09		bx,cx,dx,di,si
+GenGetCommandLine	8B,0E				ax

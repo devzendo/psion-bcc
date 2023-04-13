@@ -1,0 +1,20 @@
+#
+# makeepoc.def
+# EPOC (TopSpeed) defaults
+#
+
+CC	=tsc
+CFLAGS	=
+CCFLAGS	=
+OBJ     =obj
+AS	=as86
+
+.c.obj:
+	$(CC) $(CFLAGS) $*.c
+
+INSTDIR  =/bcc
+BINDIR	  =$(INSTDIR)/bin
+MANDIR	  =$(INSTDIR)/man/man1
+LIBDIR   =$(INSTDIR)/lib
+LDCFLAGS =$(CCFLAGS) -DNO_AOUT
+

@@ -1,0 +1,53 @@
+Credits for the Psion-bcc Software Development Kit
+==================================================
+The majority of this toolset was taken from the 
+Linux-8086 project's FTP archive: 
+
+  ftp://ftp.mit.edu/pub/ELKS 
+
+(could be wrong URL..)  
+
+If I've missed any names off this list, please email 
+me, and I'll add them. I'm reachable at
+matt@cs.keele.ac.uk
+
+The following people have contributed to this project:
+
+Pete Bentley: <pete@sorted.org>
+	Information on Psion small-model requirements
+
+Alan Cox: <?>
+	Linux-8086 project maintainer (?)
+
+Bruce Evans: <?>
+	Original bcc.
+
+Dr. Olaf Flebbe: <o.flebbe@science-computing.uni-tuebingen.de>
+	The original a.out to .img converter.
+
+Matt Gumbley : <matt@cs.keele.ac.uk>
+	Bug fixes and amendments to the bcc toolset for the
+	Psion. Project maintainer?
+
+Dr. Stephen Henson : <shenson@bigfoot.com>
+	Header structure info, code startup.
+
+Andrew Lord: <Andrew_Lord@tertio.co.uk>
+	Investigating possible compilers, .img file format.
+
+Alasdair Manson: <ali-manson@psion.com>
+	.img file format.
+
+Dan Ramage: <dramage@worldnet.att.net>
+	EPOC and .img information, web site maintainer.
+
+Al Sutton: <al@alsutton.com>
+	Mailing list maintainer, starting the Psion-Java and
+	Psion-TCP/IP projects.
+
+Keith and Dave Walker: <?>
+	CPOC compiler, ar86 archiver, etc.
+
+Nic Wise <?>
+	Port to DOS
+

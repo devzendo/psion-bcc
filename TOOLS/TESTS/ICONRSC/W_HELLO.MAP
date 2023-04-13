@@ -1,0 +1,94 @@
+
+ Start  Stop   Length Name               Class              Group
+
+ 00000H 0017AH 0017AH _TEXT              CODE               (none)
+ 00180H 01180H 01000H STACK              STACK              (none)
+ 01180H 02180H 01000H _MAGIC             MAGIC              DGROUP 
+ 02180H 02182H 00002H _INIT              DATA               DGROUP 
+ 02182H 02190H 0000EH _CONST             DATA               DGROUP 
+ 02190H 02195H 00005H _DATA              DATA               DGROUP 
+ 021A0H 021E9H 00049H _BSS               BSS                DGROUP 
+ 021E0H 021E2H 00002H BSS_END            BSS                DGROUP 
+
+  Address         Publics by Value
+
+ 0000:0000       __init0
+ 0000:000E       _p_leave
+ 0000:0016       __begin
+ 0000:0037       _p_abort
+ 0000:003E       __fp_0
+ 0000:003F       __fp_1
+ 0000:0040       __sigFp
+ 0000:0043       __math_excep
+ 0000:004C       __InitSetup
+ 0000:0069       __InitLoop
+ 0000:00C3       _p_exit
+ 0000:00D1       _main
+ 0000:0107       _wGetEventWait
+ 0000:0114       _gBorder
+ 0000:0119       _wSetBusyMsg
+ 0000:011E       _wStartup
+ 0000:0167       __FatalErrorPos
+ 0000:0170       __FatalError
+ 0000:0174       _ExtCatTable
+ 0000:0174       _ClassTable
+ 0000:0176       __FloatInit
+ 0000:0179       __FloatJmpRestore
+ 0000:0179       __FloatFinish
+ 0000:0179       __FloatJmpSave
+ 0000:0179       __FloatMathExcepDos
+ 0000:0179       __FloatInitInstance
+ 0118:0000       _DatWordDead
+ 0118:0002       _DatHandNext
+ 0118:0004       _DatHandPrev
+ 0118:0006       _DatCountrySeg
+ 0118:0008       _DatClassHandle
+ 0118:000A       _DatClassPtr
+ 0118:000C       _DatEClassHandle
+ 0118:000E       _DatEClassPtr
+ 0118:0010       _DatEnterFramePtr
+ 0118:0012       _w_ws
+ 0118:0014       _w_am
+ 0118:0016       _wClientData
+ 0118:0018       _wserv_channel
+ 0118:001A       _T
+ 0118:001C       _r
+ 0118:001E       _DatOsFramePtr
+ 0118:0020       _DatATFlag
+ 0118:0021       _DatHeapLocked
+ 0118:0022       _DatProcessNamePtr
+ 0118:0024       _DatCommandPtr
+ 0118:0026       _DatTest
+ 0118:0028       _DatApp1
+ 0118:002A       _DatApp2
+ 0118:002C       _DatApp3
+ 0118:002E       _DatApp4
+ 0118:0030       _DatApp5
+ 0118:0032       _DatApp6
+ 0118:0034       _DatApp7
+ 0118:0036       _DatDialogPtr
+ 0118:0038       _DatGate
+ 0118:003A       _DatLocked
+ 0118:003C       _DatStatusNamePtr
+ 0118:003E       _DatUsedPathNamePtr
+ 0118:1000       __init_begin
+ 0118:1002       __const_start
+ 0118:1002       __init_start
+ 0118:1010       CoreSig@CnsHandler
+ 0118:1010       __data_start
+ 0118:1012       @InitPointer
+ 0118:1014       @InitPriority
+ 0118:1020       __bss_start
+ 0118:1020       __SH_sword
+ 0118:1022       @InitCount
+ 0118:1024       @InitEnd
+ 0118:1026       @InitDone
+ 0118:1028       @ExitCode
+ 0118:102A       @StackContextSP
+ 0118:102C       @StackContextBP
+ 0118:102E       _wSpec
+ 0118:105A       _wMainGc
+ 0118:105C       _wMainWid
+ 0118:1060       __bss_end
+
+Program entry point at 0000:0000

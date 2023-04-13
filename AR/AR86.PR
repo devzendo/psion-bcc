@@ -1,0 +1,5 @@
+#system epoc img
+#set epocinit=iclib
+#model small jpi
+#compile ar86
+#link %main

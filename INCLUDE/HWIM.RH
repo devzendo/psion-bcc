@@ -1,0 +1,207 @@
+/*
+HWIM.RH - Resource file common header
+Started by Carol, December 1990
+*/
+
+STRUCT STRING
+    {
+    TEXT str; /* zero terminated text string */
+    }
+
+STRUCT STRING_ARRAY
+    {
+    STRUCT strlst[];
+    }
+
+STRUCT STRING_ARRAY_SMALL
+    {
+    LEN BYTE STRUCT strlst[];
+    }
+
+/*
+Accelerators, Menu bars and menus
+*/
+
+STRUCT WSERV_INFO
+    {
+    BYTE menu=0;    /* which menu to start with */
+    BYTE mnitem=0;  /* which item to start with in that menu */
+    LINK menbar_id; /* resource id of menu bar */
+    BYTE first_com; /* method number of first command */
+    LEN BYTE BYTE accel[]; /* acc key only */
+    }
+
+STRUCT MENU_ITEM
+    BYTE {
+    BYTE com_id;    /* method in command manager */
+    TEXT mn_item; /* menu item text */
+    }
+
+STRUCT MENU
+    {
+    LEN BYTE STRUCT items[]; /* menu items only */
+    }
+
+STRUCT MENU_BAR_ITEM
+    {
+    LINK menu_id;   /* resource id of associated menu */
+    TEXT mb_item;   /* menu header */
+    }
+
+STRUCT MENU_BAR
+    {
+    LEN BYTE STRUCT items[]; /* menu bar item only */
+    }
+
+/*
+Dialog boxes
+*/
+
+STRUCT CHLIST
+    {
+    LINK rid=0;
+    BYTE nsel=0;
+    BYTE flags=0;
+    }
+
+STRUCT TXTMESS
+    {
+    WORD flags=0;
+    TEXT str="";
+    }
+
+STRUCT EDWIN        /* edit box */
+    {
+    WORD vulen;     /* ignored unless either _VULEN_ flag set */
+    WORD flags=0;
+    WORD maxlen;
+    TEXT str="";
+    }
+
+STRUCT PUSH_BUT
+    BYTE {
+    WORD keycode; 
+    TEXT str;       /* text associated with button */
+    }
+
+STRUCT ACLIST_ARRAY
+    {
+    LEN BYTE STRUCT button[];   /* array of push_buttons */
+    }
+
+STRUCT ACLIST  /* Initialising struct for action list */
+    {
+    LINK rid;
+    }
+
+STRUCT CHOICE_ITEM /* choice list item */
+    BYTE {
+    TEXT str=""; /* identification text */
+    }
+
+STRUCT LNCEDIT   /* long number edit box */
+    {
+    LONG current = 0;
+    LONG low = 0;           /* lowest allowed value */
+    LONG high = 10000000;   /* highest allowed value */
+    }
+
+STRUCT NCEDIT   /* numeric control edit box (unsigned words) */
+    {
+    WORD current = 0;
+    WORD low = 0;       /* lowest allowed value */
+    WORD high = 65535;  /* highest allowed value */
+    }
+
+STRUCT WNCEDIT   /* numeric control edit box (signed words) */
+    {
+    WORD current = 0;
+    WORD low = -32768;  /* lowest allowed value */
+    WORD high = 32767;  /* highest allowed value */
+    }
+
+STRUCT FLTEDIT   /* floating point edit box */
+    {                              
+    DOUBLE current=0.0;
+    DOUBLE low =-9.9999999999e99;  /* lower bound */
+    DOUBLE high =9.9999999999e99;  /* upper bound */
+    BYTE vulen=5;       /* width of editor in characters */
+    BYTE ndec=0;        /* P_DTOB_GENERAL */
+    }
+
+STRUCT DTEDIT    /* combined date/time editor */
+    {
+    WORD flags;
+    LONG current;
+    LONG low;       /* lowest allowed value */
+    LONG high;      /* highest allowed value */
+    }
+
+STRUCT RGEDIT    /* range editor */
+    {
+    WORD low=1;			/* lowest allowed value */
+    WORD value_1=1;		/* lower value of range */
+    WORD value_2=9999;		/* higher value of range */
+    WORD high=9999;		/* highest allowed value */
+    }
+
+STRUCT LLEDIT    /* lat long editor */
+    {
+    WORD flags;			/* Latitude or longitude */
+    WORD value=0;		/* The default value */
+    }
+
+STRUCT WLDSELWN
+    {
+    WORD flags;
+    }
+
+STRUCT FNEDIT   /* filename editor */
+    {
+    BYTE flags=0;
+    TEXT fname="";
+    }
+
+STRUCT FNSELWN    /* filename selector */
+    {
+    BYTE flags=0;
+    TEXT fname="";
+    }
+
+STRUCT CONTROL
+    LEN {
+    WORD flags=0;
+    BYTE class;     /* class of control */
+    TEXT prompt=""; /* Prompt for item */
+    STRUCT info;    /* eg CHLIST, TXTMESS, EDWIN, or NCEDIT */
+    }
+
+STRUCT DIALOG
+    {
+    WORD flags=0;
+    TEXT title="";
+    LEN BYTE STRUCT controls[]; /* CONTROL only */
+    }
+
+STRUCT TOPIC_ARRAY
+    {
+    LEN BYTE LINK id_lst[];   /* ids of topics or related topics */
+    }
+
+STRUCT HELP_ARRAY
+    {
+    LINK topic_id=0;    /* id of array of related topics */
+    TEXT topic;
+    LEN BYTE STRUCT strlst[];
+    }
+
+STRUCT PAGE_SIZE
+    {
+    WORD width;
+    WORD length;
+    }
+
+STRUCT PAGE_SIZE_ARRAY
+    {
+    LEN WORD STRUCT page_size[];
+    }

@@ -1,0 +1,23 @@
+The file genlib.tbl is a table of EPOC system calls. Each line has the
+following form:
+
+IoOpen			85,00		bx,cx,dx	ax
+
+There are four fields separated by one or more TABs.
+
+The first field is the function name.
+
+The second field is the interrupt number followed optionally by a comma and
+the sub function number, both in HEX without leading 0x or $.
+
+The third field is a comma separated list of registers. The order is the
+order in which a C function call will use them. For example IoOpen(1,2,3)
+would set bx to 1, cx to 2 and dx to 3.
+
+The fourth field is the register containing any return value. If left blank
+ax is assumed.  If the carry is set (which EPOC uses to indicate an error)
+the ax is returned regardless (an error code is sent in ax). If the carry is
+clear then the specified register is returned.
+
+The awk script then produces a set of file called epocxxyy.s where xx and yy
+are the interrupt and sub function numbers respectively.

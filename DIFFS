@@ -1,0 +1,388 @@
+diff -cr --ignore-space-change psion-bcc/Make.defs psion-bcc.new/Make.defs
+*** psion-bcc/Make.defs	Sun Mar  9 01:08:44 1997
+--- psion-bcc.new/Make.defs	Tue Mar 11 23:03:28 1997
+***************
+*** 18,24 ****
+  CFLAGS  =$(CCFLAGS)
+  LDFLAGS	=-s
+  
+! export INSTDIR	=/usr/bcc
+  export BINDIR	=$(INSTDIR)/bin
+  export MANDIR	=$(INSTDIR)/man/man1
+! export LIBDIR	=$(INSTDIR)/lib/bcc
+--- 18,30 ----
+  CFLAGS  =$(CCFLAGS)
+  LDFLAGS	=-s
+  
+! #export INSTDIR  =/usr/bcc
+! #export BINDIR   =$(INSTDIR)/bin
+! #export MANDIR   =$(INSTDIR)/man/man1
+! #export LIBDIR   =$(INSTDIR)/lib/bcc
+! 
+! # I prefer these for DOS.
+! export INSTDIR  =/bcc
+  export BINDIR   =$(INSTDIR)/bin
+  export MANDIR   =$(INSTDIR)/man/man1
+! export LIBDIR   =$(INSTDIR)/lib
+diff -cr --ignore-space-change psion-bcc/ar/ar86.c psion-bcc.new/ar/ar86.c
+*** psion-bcc/ar/ar86.c	Sun Aug 25 23:20:52 1996
+--- psion-bcc.new/ar/ar86.c	Wed Mar 12 01:54:22 1997
+***************
+*** 7,12 ****
+--- 7,13 ----
+  #include <stdlib.h>
+  #include <string.h>
+  #include <stdarg.h>
++ #include <unistd.h>
+  #include <sys/types.h>
+  #include <sys/stat.h>
+  #include <fcntl.h>
+***************
+*** 194,205 ****
+  {
+  	struct ar_hdr	hdr;		/* file archive header */
+  	int ifd;
+  	ifd = aropen(arname);
+  	while (read_file_header(ifd,&hdr)) {
+  		(void)writestr(STDOUT,hdr.ar_name);
+- 		(void)writestr(STDOUT,":\n");
+  		if (vflag) {
+  		}
+  	}
+  }
+  
+--- 195,212 ----
+  {
+  	struct ar_hdr	hdr;		/* file archive header */
+  	int ifd;
++         long fsize;
+  	ifd = aropen(arname);
+  	while (read_file_header(ifd,&hdr)) {
+  		(void)writestr(STDOUT,hdr.ar_name);
+  		if (vflag) {
++                 writestr (STDOUT,"\t");
++                 writestr (STDOUT,hdr.ar_size);
+                  }
++ 		(void)writestr(STDOUT,":\n");
++                 fsize = strtol (hdr.ar_size, NULL, 10);
++                 if (fsize & 1) fsize++;
++                 lseek (ifd, fsize, SEEK_CUR);
+  	}
+  }
+  
+diff -cr --ignore-space-change psion-bcc/as/readsrc.c psion-bcc.new/as/readsrc.c
+*** psion-bcc/as/readsrc.c	Fri Nov 15 20:52:04 1996
+--- psion-bcc.new/as/readsrc.c	Tue Mar 11 23:13:48 1997
+***************
+*** 94,100 ****
+         fd = 0;
+      else
+  #endif
+!     if ((unsigned) (fd = open(name, O_RDONLY|O_BINARY)) > 255)
+  	as_abort("error opening input file");
+  
+  #if BIGBUFFER == 1
+--- 94,100 ----
+         fd = 0;
+      else
+  #endif
+!     if ((unsigned) (fd = open(name, O_RDONLY)) > 255)
+  	as_abort("error opening input file");
+  
+  #if BIGBUFFER == 1
+diff -cr --ignore-space-change psion-bcc/bcc/bcc.c psion-bcc.new/bcc/bcc.c
+*** psion-bcc/bcc/bcc.c	Sat Mar  8 03:01:32 1997
+--- psion-bcc.new/bcc/bcc.c	Wed Mar 12 16:29:02 1997
+***************
+*** 19,24 ****
+--- 19,27 ----
+     08/03/97 MJG Added automatic passing of -X-D<64+stackbytes> and 
+                  -Y-S<stackparas> options when compiling a Psion executable.
+                  Added 
++    11/03/97 SNH Changed #ifdef DOS to MSDOS for compatability with DJGPP
++                 et al.
++ 
+  */
+  
+  #define _POSIX_SOURCE 1
+***************
+*** 732,738 ****
+  	    addarg(&ldargs, "-lc");
+  	    if (img_pass) {
+                  /* FIXME: use itoa here to cut out stdio */
+!                 sprintf(stack_arg,"-D%d", 64+stack_size);
+                  addarg(&ldargs, stack_arg);
+  	        addarg(&ldargs, "-p");
+              }
+--- 735,741 ----
+  	    addarg(&ldargs, "-lc");
+  	    if (img_pass) {
+                  /* FIXME: use itoa here to cut out stdio */
+!                 sprintf(stack_arg,"-D%x", stack_size);
+                  addarg(&ldargs, stack_arg);
+  	        addarg(&ldargs, "-p");
+              }
+***************
+*** 911,917 ****
+      int arg0;
+      int i;
+      int status;
+! #ifdef DOS
+      char cmdbuf[256]; /* Should be big enough ? */
+  #endif
+  
+--- 914,920 ----
+      int arg0;
+      int i;
+      int status;
+! #ifdef MSDOS
+      char cmdbuf[256]; /* Should be big enough ? */
+  #endif
+  
+***************
+*** 947,953 ****
+         call to system(). I've put some DOS stuff in, in ifdef DOS blocks.
+         This works on Linux, but it may not work on DOS. */
+  
+! #ifdef DOS
+      /* DOS child process spawn code */
+      cmdbuf[0]='\0';
+      for (i = arg0; i < argp->argc; ++i) {
+--- 950,956 ----
+         call to system(). I've put some DOS stuff in, in ifdef DOS blocks.
+         This works on Linux, but it may not work on DOS. */
+  
+! #ifdef MSDOS
+      /* DOS child process spawn code */
+      cmdbuf[0]='\0';
+      for (i = arg0; i < argp->argc; ++i) {
+diff -cr --ignore-space-change psion-bcc/ld/Makefile psion-bcc.new/ld/Makefile
+*** psion-bcc/ld/Makefile	Fri Mar  7 02:19:52 1997
+--- psion-bcc.new/ld/Makefile	Wed Mar 12 17:02:12 1997
+***************
+*** 1,6 ****
+  
+  include ../Make.defs
+! CFLAGS  =$(CCFLAGS) -DREL_OUTPUT
+  
+  # May need some of these if the auto-sense fails.
+  # -DV7_A_OUT -DBSD_A_OUT -DSTANDARD_GNU_A_OUT
+--- 1,9 ----
+  
+  include ../Make.defs
+! #CFLAGS  =$(CCFLAGS) -DREL_OUTPUT
+! #Use these flags for MS-DOS
+! CFLAGS  =$(CCFLAGS) -DNO_AOUT
+! 
+  
+  # May need some of these if the auto-sense fails.
+  # -DV7_A_OUT -DBSD_A_OUT -DSTANDARD_GNU_A_OUT
+diff -cr --ignore-space-change psion-bcc/ld/writebin.c psion-bcc.new/ld/writebin.c
+*** psion-bcc/ld/writebin.c	Wed Mar  5 00:23:32 1997
+--- psion-bcc.new/ld/writebin.c	Tue Mar 11 23:11:54 1997
+***************
+*** 950,961 ****
+  }
+  #else
+  
+! PUBLIC void writebin(outfilename, argsepid, argbits32, argstripflag, arguzp)
+  char *outfilename;
+  bool_pt argsepid;
+  bool_pt argbits32;
+  bool_pt argstripflag;
+  bool_pt arguzp;
+  {
+      fatalerror("Native a.out generation not included, sorry");
+  }
+--- 950,964 ----
+  }
+  #else
+  
+! PUBLIC void writebin(outfilename, argsepid, argbits32, argstripflag, arguzp,
+! argpalign)
+  char *outfilename;
+  bool_pt argsepid;
+  bool_pt argbits32;
+  bool_pt argstripflag;
+  bool_pt arguzp;
++ bool_pt argpalign;
++ 
+  {
+      fatalerror("Native a.out generation not included, sorry");
+  }
+diff -cr --ignore-space-change psion-bcc/tools/dismain.c psion-bcc.new/tools/dismain.c
+*** psion-bcc/tools/dismain.c	Mon Mar 10 01:03:16 1997
+--- psion-bcc.new/tools/dismain.c	Wed Mar 12 16:44:08 1997
+***************
+*** 49,54 ****
+--- 49,58 ----
+  static int cpuid = 0;
+  #endif
+  
++ #ifndef O_BINARY
++ #define O_BINARY 0
++ #endif
++ 
+  _PROTOTYPE(static void usage, (char *s ));
+  _PROTOTYPE(static void fatal, (char *s, char *t ));
+  _PROTOTYPE(static void zdump, (unsigned long beg ));
+***************
+*** 566,572 ****
+     if (IFILE == NULL)
+        usage(PRG);
+     else
+!       if ((fd = open(IFILE,0)) < 0)
+           {
+           sprintf(a,"can't access input file %s",IFILE);
+           fatal(PRG,a);
+--- 570,576 ----
+     if (IFILE == NULL)
+        usage(PRG);
+     else
+!       if ((fd = open(IFILE,O_RDONLY|O_BINARY)) < 0)
+           {
+           sprintf(a,"can't access input file %s",IFILE);
+           fatal(PRG,a);
+***************
+*** 639,645 ****
+  
+     close(fd);
+  
+!    if (freopen(IFILE,"r",stdin) == NULL)
+        {
+        sprintf(a,"can't reopen input file %s",IFILE);
+        fatal(PRG,a);
+--- 643,649 ----
+  
+     close(fd);
+  
+!    if (freopen(IFILE,"rb",stdin) == NULL)
+        {
+        sprintf(a,"can't reopen input file %s",IFILE);
+        fatal(PRG,a);
+diff -cr --ignore-space-change psion-bcc/tools/imgconv.c psion-bcc.new/tools/imgconv.c
+*** psion-bcc/tools/imgconv.c	Sun Mar  9 18:56:40 1997
+--- psion-bcc.new/tools/imgconv.c	Tue Mar 11 23:43:54 1997
+***************
+*** 82,87 ****
+--- 82,91 ----
+  #define FALSE 0
+  #endif
+  
++ #ifndef O_BINARY
++ #define O_BINARY 0
++ #endif
++ 
+  
+  struct embedded {
+    unsigned short length;
+***************
+*** 132,138 ****
+    if (argc < 3) 
+      goto usage;
+    
+!   if ((a_out_fd = open( argv[1], O_RDONLY)) < 0) {
+      fprintf( stderr, "imgconv: Couldn't open input file %s\n", argv[1]);
+      exit(1);
+    }
+--- 136,142 ----
+    if (argc < 3) 
+      goto usage;
+    
+!   if ((a_out_fd = open( argv[1], O_RDONLY|O_BINARY)) < 0) {
+      fprintf( stderr, "imgconv: Couldn't open input file %s\n", argv[1]);
+      exit(1);
+    }
+***************
+*** 154,160 ****
+      exit(1);
+    }
+  
+!   if (NULL == (img_fd = fopen( argv[2] , "w"))) {
+      fprintf( stderr, "imgconv: Couldn't open %s for writing\n", argv[1]);
+      exit(1);
+    }
+--- 158,164 ----
+      exit(1);
+    }
+  
+!   if (NULL == (img_fd = fopen( argv[2] , "wb"))) {
+      fprintf( stderr, "imgconv: Couldn't open %s for writing\n", argv[1]);
+      exit(1);
+    }
+***************
+*** 214,224 ****
+    for (af=0; af<16 && aflName[af]!='.'; af++);
+    strcpy(aflName+af, ".afl");
+  
+!   if (NULL != (afl_fd = fopen( aflName, "r"))) {
+      if (verbose)
+        printf("Adding embedded files from list held in %s\n",aflName);
+  
+-     embeddedTotalLength = numEmbeddedFiles = 0;
+      
+      for (af=0; af<MaxAddFiles; af++) {
+  
+--- 218,229 ----
+    for (af=0; af<16 && aflName[af]!='.'; af++);
+    strcpy(aflName+af, ".afl");
+  
+!   embeddedTotalLength = numEmbeddedFiles = 0;
+! 
+!   if (NULL != (afl_fd = fopen( aflName, "rb"))) {
+      if (verbose)
+        printf("Adding embedded files from list held in %s\n",aflName);
+  
+      
+      for (af=0; af<MaxAddFiles; af++) {
+  
+***************
+*** 237,243 ****
+        if (afName[afLen-1] == '\n')
+          afName[afLen-1]='\0';
+  
+!       if ((af_fd = open( afName, O_RDONLY)) < 0) {
+          fprintf( stderr, "imgconv: Couldn't open embedded file %s\n", afName);
+          exit(1);
+        }
+--- 242,248 ----
+        if (afName[afLen-1] == '\n')
+          afName[afLen-1]='\0';
+  
+!       if ((af_fd = open( afName, O_RDONLY|O_BINARY)) < 0) {
+          fprintf( stderr, "imgconv: Couldn't open embedded file %s\n", afName);
+          exit(1);
+        }
+diff -cr --ignore-space-change psion-bcc/tools/imgdump.c psion-bcc.new/tools/imgdump.c
+*** psion-bcc/tools/imgdump.c	Mon Mar 10 01:09:22 1997
+--- psion-bcc.new/tools/imgdump.c	Tue Mar 11 21:16:40 1997
+***************
+*** 25,30 ****
+--- 25,34 ----
+  
+  #include "img.h"
+  
++ #ifndef O_BINARY
++ #define O_BINARY 0
++ #endif
++ 
+  /*******************************************************************************
+  ***
+  *** Function         : hexdig
+***************
+*** 197,203 ****
+  unsigned long filesize, nread;
+  unsigned char *buf;
+  
+!   fd=open(filename,O_RDONLY);
+    if (fd == -1) {
+      fprintf(stderr,"imgdump: Can't open %s\n",filename);
+      return;
+--- 201,207 ----
+  unsigned long filesize, nread;
+  unsigned char *buf;
+  
+!   fd=open(filename,O_RDONLY|O_BINARY);
+    if (fd == -1) {
+      fprintf(stderr,"imgdump: Can't open %s\n",filename);
+      return;

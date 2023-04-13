@@ -1,0 +1,11 @@
+/*	HEADER - RSCFILE.XG
+Copyright (C) Psion PLC 1992
+ VER    DATE   BY  DESCRIPTION
+===== ======== === ===========
+1.10F 31/05/92 DWW First release
+*/
+
+#define C_RSCFILE 12
+#define O_RS_READ_BUF 3
+#define O_RS_READ 2
+#define O_RS_INIT 1

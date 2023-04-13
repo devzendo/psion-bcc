@@ -1,0 +1,34 @@
+#
+# makelin.def
+# Linux-specific defaults
+#
+
+WALLP =-Wtraditional -Wshadow -Wid-clash-14 -Wpointer-arith \
+       -Wcast-qual -Wcast-align -Wconversion -Waggregate-return \
+       -Wstrict-prototypes -Wmissing-prototypes -Wredundant-decls \
+       -Wnested-externs -Winline 
+
+# unproto and disimg are yukky, I've included '-w' in the local makefile.
+WALL  =-Wstrict-prototypes
+
+ifeq ($(CC),cc)
+CC	=gcc
+CCFLAGS	=-Wall $(WALL) -O2 -fno-strength-reduce
+else
+CCFLAGS =-O
+endif
+
+AS	=as86
+CFLAGS  =$(CCFLAGS)
+LDFLAGS	=-s
+OBJ=o
+
+#
+# Use these lines for Linux builds
+#
+export INSTDIR  =/usr/bcc
+export BINDIR   =$(INSTDIR)/bin
+export MANDIR   =$(INSTDIR)/man/man1
+export LIBDIR   =$(INSTDIR)/lib/bcc
+export LDCFLAGS =$(CCFLAGS) -DREL_OUTPUT
+

@@ -1,0 +1,12 @@
+This is a program that does nothing.
+
+It's used for my startup code investigations. 
+Build it with:
+bcc nullprog.c -o nullprog.img
+
+A version compiled by the SIBO C SDK is in ../mtest 
+
+The .img file will have the .pic, .rsc and .shd files embedded in it,
+according to the .afl file. The .pic file was taken from the SPY example
+in the SIBO SDK, if you were wondering :)
+

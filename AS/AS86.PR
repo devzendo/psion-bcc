@@ -1,0 +1,20 @@
+#system epoc img
+#set epocinit=iclib
+#model small jpi
+#compile as
+#compile assemble
+#compile error
+#compile express
+#compile genbin
+#compile genlist
+#compile genobj
+#compile gensym
+#compile keywords
+#compile macro
+#compile mops
+#compile pops
+#compile readsrc
+#compile scan
+#compile table
+#compile typeconv
+#link %main
